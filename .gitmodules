@@ -3,7 +3,7 @@
 	url = https://github.com/alifsemi/alif_common-app-utils.git
 [submodule "lib/tinyusb"]
 	path = lib/tinyusb
-	url = https://github.com/JuhoEskeli-AlifSemi/tinyusb.git
+	url = https://github.com/tero-alifsemi/tinyusb.git
 [submodule "lib/lwip"]
 	path = lib/lwip
 	url = https://github.com/lwip-tcpip/lwip.git
