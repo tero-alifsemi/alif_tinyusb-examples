@@ -21,7 +21,6 @@ solution:
       board: Alif Semiconductor::DevKit-E7
       define:
         - "CORE_M55_HE"
-        - BOARD_ALIF_DEVKIT_VARIANT: 4
       target-set:
         - set:
           images:
@@ -34,13 +33,13 @@ solution:
             - project-context: device_msc_dual_lun.debug
             - project-context: device_cdc_msc_freertos.debug
             - project-context: device_cdc_msc.debug
+            - project-context: device_cdc_dual_ports.debug
 
     - type: DevKit-E7-HP
       device: Alif Semiconductor::AE722F80F55D5LS:M55_HP
       board: Alif Semiconductor::DevKit-E7
       define:
         - "CORE_M55_HP"
-        - BOARD_ALIF_DEVKIT_VARIANT: 4
       target-set:
         - set:
           images:
@@ -53,13 +52,13 @@ solution:
             - project-context: device_msc_dual_lun.debug
             - project-context: device_cdc_msc_freertos.debug
             - project-context: device_cdc_msc.debug
+            - project-context: device_cdc_dual_ports.debug
 
     - type: DevKit-E7-E3-HE
       device: Alif Semiconductor::AE302F80F55D5LE:M55_HE
       board: Alif Semiconductor::DevKit-E7
       define:
         - "CORE_M55_HE"
-        - BOARD_ALIF_DEVKIT_VARIANT: 4
       # Workaround: E3 has no SoC condition in the DFP, so board and SOC headers
       # are not resolved automatically. Manually add E7 equivalents.
       add-path:
@@ -80,13 +79,12 @@ solution:
             - project-context: device_msc_dual_lun.debug
             - project-context: device_cdc_msc_freertos.debug
             - project-context: device_cdc_msc.debug
-
+            - project-context: device_cdc_dual_ports.debug
     - type: DevKit-E7-E3-HP
       device: Alif Semiconductor::AE302F80F55D5LE:M55_HP
       board: Alif Semiconductor::DevKit-E7
       define:
         - "CORE_M55_HP"
-        - BOARD_ALIF_DEVKIT_VARIANT: 4
       # Workaround: E3 has no SoC condition in the DFP, so board and SOC headers
       # are not resolved automatically. Manually add E7 equivalents.
       add-path:
@@ -107,13 +105,12 @@ solution:
             - project-context: device_msc_dual_lun.debug
             - project-context: device_cdc_msc_freertos.debug
             - project-context: device_cdc_msc.debug
-
+            - project-context: device_cdc_dual_ports.debug
     - type: DevKit-E8-HE
       device: Alif Semiconductor::AE822FA0E5597LS0:M55_HE
       board: Alif Semiconductor::DevKit-E8
       define:
         - "CORE_M55_HE"
-        - BOARD_ALIF_DEVKIT_VARIANT: 4
       target-set:
         - set:
           images:
@@ -126,24 +123,23 @@ solution:
             - project-context: device_hid_boot_interface.debug
             - project-context: device_msc_dual_lun.debug
             - project-context: device_cdc_msc_freertos.debug
+            - project-context: device_cdc_dual_ports.debug
 
     - type: DevKit-E8-HP
       device: Alif Semiconductor::AE822FA0E5597LS0:M55_HP
       board: Alif Semiconductor::DevKit-E8
       define:
         - "CORE_M55_HP"
-        - BOARD_ALIF_DEVKIT_VARIANT: 4
       target-set:
         - set:
           images:
-            - project-context: device_cdc_msc.debug
+            - project-context: device_cdc_dual_ports.debug
 
     - type: DevKit-E1C-HE
       device: Alif Semiconductor::AE1C1F4051920PH0:M55_HE
       board: Alif Semiconductor::DevKit-E1C
       define:
         - "CORE_M55_HE"
-        - BOARD_ALIF_DEVKIT_VARIANT: 4
       target-set:
         - set:
           images:
@@ -156,13 +152,12 @@ solution:
             - project-context: device_msc_dual_lun.debug
             - project-context: device_cdc_msc_freertos.debug
             - project-context: device_cdc_msc.debug
-
+            - project-context: device_cdc_dual_ports.debug
     - type: AppKit-E8-HE
       device: Alif Semiconductor::AE822FA0E5597BS0:M55_HE
       board: Alif Semiconductor::AppKit-E8-AIML
       define:
         - "CORE_M55_HE"
-        - BOARD_ALIF_DEVKIT_VARIANT: 5
       target-set:
         - set:
           images:
@@ -173,7 +168,6 @@ solution:
       board: Alif Semiconductor::AppKit-E8-AIML
       define:
         - "CORE_M55_HP"
-        - BOARD_ALIF_DEVKIT_VARIANT: 5
       target-set:
         - set:
           images:
@@ -191,15 +185,13 @@ solution:
       define:
         - _RELEASE
 
-  # Select development board variant
-  #   <4=> Alif Development Kit (Generation 2)
-  #   <5=> Alif AI/ML Application Kit (Generation 2)
   define:
     - UNICODE
     - _UNICODE
 
   projects:
     - project: examples/device/cdc_msc/device_cdc_msc.cproject.yml
+    - project: examples/device/cdc_dual_ports/device_cdc_dual_ports.cproject.yml
     - project: examples/device/cdc_msc_freertos/device_cdc_msc_freertos.cproject.yml
     - project: examples/device/msc_dual_lun/device_msc_dual_lun.cproject.yml
     - project: examples/device/hid_boot_interface/device_hid_boot_interface.cproject.yml

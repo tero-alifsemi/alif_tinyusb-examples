@@ -11,8 +11,8 @@ layer:
   groups:
     - group: Alif USB low level driver for TinyUSB device mode
       files:
-        - file: ../lib/tinyusb/src/portable/alif/alif_e7_dk/dcd_ensemble.c
     
+        - file: ../lib/tinyusb/src/portable/alif/ensemble/dcd_ensemble.c
     - group: TinyUSB device mode sources
       files:
         - file: ../lib/tinyusb/src/device/usbd.c

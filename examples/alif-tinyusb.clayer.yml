@@ -3,8 +3,8 @@ layer:
   description: TinyUSB with Alif Ensemble compatibility layer
 
   define:
-    - CFG_TUSB_MCU: OPT_MCU_NONE
-    - TUP_DCD_ENDPOINT_MAX: 4
+    - CFG_TUSB_MCU: OPT_MCU_ALIF
+    - TUP_DCD_ENDPOINT_MAX: 8
     - TUD_OPT_RHPORT: 0
     - BOARD_TUD_MAX_SPEED: OPT_MODE_HIGH_SPEED
     - SECTION_USB_DMA_BUF: \"usb_dma_buf\"
